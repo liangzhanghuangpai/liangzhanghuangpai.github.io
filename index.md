@@ -39,18 +39,21 @@ tagline:
 
     document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
       WeixinJSBridge.on('menu:share:appmessage', function(argv) {
-        var item = data[selected_id];
+        var item = data[selected_id]
+          , title = item.score_prefix + item.score + item.score_suffix;
+        document.title = title;
         WeixinJSBridge.invoke('sendAppMessage', {
           "appId": item.appId,
           "img_url": item.imgUrl,
           "link": item.url,
           "desc": "",
-          "title": item.score_prefix + item.score + item.score_suffix
+          "title": title
         });
       });
 
       WeixinJSBridge.on('menu:share:timeline', function(argv) {
-        var item = data[selected_id];
+        var item = data[selected_id]
+          , title = item.score_prefix + item.score + item.score_suffix;
         WeixinJSBridge.invoke('shareTimeline', {
           "appid": item.appId,
           "img_url": item.imgUrl,
@@ -58,7 +61,7 @@ tagline:
           "img_height": "640",
           "link": item.url,
           "desc": "",
-          "title": item.score_prefix + item.score + item.score_suffix
+          "title": title
         });
       });
     }, false);
