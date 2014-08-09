@@ -4,11 +4,11 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
-    <title>你简直霸气侧漏，把企鹅击飞出多少米都可以，谁还能超越我？</title>	
+    <title>把企鹅击飞出多少米都可以</title>	
 </head>
 <body>
 	<div style="text-align:center">
-	<h3>你简直霸气侧漏，你想把企鹅击飞出多少米？</h3>
+	<h3 id="tip">你简直霸气侧漏，你想把企鹅击飞出多少米？</h3>
 	<input type="text" id="score" style="width: 60%; border: 2px solid #eee; font-size: 1.2em"></input>
 	</div>
 
@@ -46,8 +46,9 @@
 			});
 		}, false);
 		function dp_share(){
-			document.title ="你简直霸气侧漏，把企鹅击飞出"+ (parseInt(document.getElementById('score').value, 10) || 0 ) +"米，谁还能超越我？";
-			dataForWeixin.tTitle = document.title;
+			var title ="你简直霸气侧漏，把企鹅击飞出"+ (parseInt(document.getElementById('score').value, 10) || 0 ) +"米，谁还能超越我？";
+			document.getElementById('tip').innerText = title;
+			dataForWeixin.tTitle = title;
 		}
 
 		document.getElementById('score').addEventListener('keyup', function() {
