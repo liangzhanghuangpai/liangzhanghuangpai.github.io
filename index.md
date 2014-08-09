@@ -4,7 +4,9 @@ title:
 tagline: 
 ---
 {% include JB/setup %}
-    
+<div id="share" style="display:none">
+  <img width="100%" src="/images/shares.png" style="position: fixed; z-index: 9999; top: 0; left: 0;" ontouchstart="document.getElementById('share').style.display='none';">
+</div>
 <div id="posts">
   <script type="text/javascript">
     var data = {};
@@ -69,6 +71,7 @@ tagline:
     var buttons = document.getElementsByClassName("btn-success");
     for (var i = 0, j=buttons.length; i<j; i++) {
       buttons[i].addEventListener("click", function(e){
+        document.getElementById("share").style.display = "block";
         selected_id = e.target.getAttribute("data-id");
       });
     }
