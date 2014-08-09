@@ -188,8 +188,8 @@
 
     var buttons = document.getElementsByClassName("btn-success");
     for (var i = 0, j=buttons.length; i<j; i++) {
-      buttons[i].addEventListener("click", function(){
-        selected_id = buttons[i].getAttribute("data-id");
+      buttons[i].addEventListener("click", function(e){
+        selected_id = e.target.getAttribute("data-id");
       });
     }
   </script>
