@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+ 
+ <title>微信游戏记录生成器</title>
+ <link href="http://liangzhanghuangpai.github.io/" rel="self"/>
+ <link href="http://liangzhanghuangpai.github.io"/>
+ <updated>2014-08-10T03:13:24+08:00</updated>
+ <id>http://liangzhanghuangpai.github.io</id>
+ <author>
+   <name>微信游戏记录生成器</name>
+   <email>liangzhanghuangpai@yeah.net</email>
+ </author>
+
+ 
+ <entry>
+   <title>疯狂打企鹅</title>
+   <link href="http://liangzhanghuangpai.github.io/2014/08/10/feng-kuang-da-qi-e"/>
+   <updated>2014-08-10T00:00:00+08:00</updated>
+   <id>http://liangzhanghuangpai.github.io/2014/08/10/feng-kuang-da-qi-e</id>
+   <content type="html">
+</content>
+ </entry>
+ 
+ 
+</feed>

@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <title>把企鹅击飞出多少米都可以</title>	
+</head>
+<body>
+	<div style="text-align:center">
+	<h3 id="tip">你简直霸气侧漏，你想把企鹅击飞出多少米？</h3>
+	<input type="text" id="score" style="width: 60%; border: 2px solid #eee; font-size: 1.2em"></input>
+	</div>
+
+	<script language="javascript">
+		var mebtnopenurl = 'http://game.2sky.cn/game/';
+		var rankurl = mebtnopenurl;
+		dataForWeixin = {
+			"appId": "wxa3d8640e8643fc3c",
+			"imgUrl": "http://game.2sky.cn/vapp/52/3.jpg",
+			"url": "http://xuanran.dlnafei.com/game/52/",
+			"tTitle": "打企鹅-6e游戏",
+			"tContent": "打企鹅-6e游戏"
+		};	
+		document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
+			WeixinJSBridge.on('menu:share:appmessage', function(argv) {
+				WeixinJSBridge.invoke('sendAppMessage', {
+				   "appid": dataForWeixin.appId,
+					"img_url": dataForWeixin.imgUrl,
+					"link": dataForWeixin.url,
+					"desc": dataForWeixin.tContent,
+					"title": dataForWeixin.tTitle
+				});
+			});
+
+			WeixinJSBridge.on('menu:share:timeline', function(argv) {
+				WeixinJSBridge.invoke('shareTimeline', {
+				   "appid": dataForWeixin.appId,
+					"img_url": dataForWeixin.imgUrl,
+					"img_width": "640",
+					"img_height": "640",
+					"link": dataForWeixin.url,
+					"desc": dataForWeixin.tContent,
+					"title": dataForWeixin.tTitle
+				});
+			});
+		}, false);
+		function dp_share(){
+			var title ="你简直霸气侧漏，把企鹅击飞出"+ (parseInt(document.getElementById('score').value, 10) || 0 ) +"米，谁还能超越我？";
+			document.getElementById('tip').innerText = title;
+			dataForWeixin.tTitle = title;
+		}
+
+		document.getElementById('score').addEventListener('keyup', function() {
+			dp_share();
+		});
+	</script>
+</body>
+</html>
