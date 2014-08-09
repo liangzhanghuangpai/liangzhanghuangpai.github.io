@@ -41,9 +41,10 @@ tagline:
       WeixinJSBridge.on('menu:share:appmessage', function(argv) {
         var item = data[selected_id];
         WeixinJSBridge.invoke('sendAppMessage', {
-          "appid": item.appId,
+          "appId": item.appId,
           "img_url": item.imgUrl,
           "link": item.url,
+          "desc": "",
           "title": item.score_prefix + item.score + item.score_suffix
         });
       });
@@ -56,6 +57,7 @@ tagline:
           "img_width": "640",
           "img_height": "640",
           "link": item.url,
+          "desc": "",
           "title": item.score_prefix + item.score + item.score_suffix
         });
       });
